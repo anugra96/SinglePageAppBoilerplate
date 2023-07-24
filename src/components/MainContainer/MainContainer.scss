@@ -1,0 +1,78 @@
+@import "../../global.scss";
+
+
+.MainContainer {
+    display: flex;
+    color: black;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: white;
+    position: relative;
+    top: 0px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; // for firefox
+
+    >* {
+        width: 100%;
+        height: calc(100vh - 70px);
+        scroll-snap-align: start;
+    }
+
+    @include mobile {
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+
+
+    .left {
+
+        flex: 2;
+        height: auto !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: aqua;
+        transition: all 0.5s ease;
+        flex-flow: row wrap;
+        position: relative;
+        overflow-y: auto;
+
+
+        @include mobile{
+            flex: 4;
+   
+
+        }
+
+
+    }
+
+
+    .right {
+
+        flex: 5;
+        height: inherit;
+        background-color: darkslategrey;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        position: relative;
+
+        @include mobile{
+            flex: 3;
+   
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+        }
+
+
+
+    }
+
+
+}
